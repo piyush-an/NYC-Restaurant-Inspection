@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: dim_cuisine
+    description: >
+      List of unique based on cuisine

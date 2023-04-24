@@ -1,0 +1,9 @@
+version: 2
+sources:
+  - name: staging
+    database: nyc
+    schema: staging
+    tables:
+      - name: stg_food_inspection
+      # - name: yellow_gcs
+      # - name: fhv vertical-set-375108.food_inspection.nyc

@@ -1,0 +1,12 @@
+dbt_nyc:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: db
+      port: 5432
+      user: root
+      pass: root
+      dbname: nyc
+      schema: target
