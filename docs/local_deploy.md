@@ -9,7 +9,7 @@
 1. Open Terminal (Mac) or Ubuntu (WSL on Windows)
 2. Clone the repository in local
     ```bash
-    git clone https://github.com/BigDataIA-Summer2022-Team04/News-Aggregator.git
+    git clone https://github.com/piyush-an/NYC-Restaurant-Inspection.git
     ```
     Alternatively, download the repo as a zip file and unzip in destination folder
 3. Check docker is running

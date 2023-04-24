@@ -18,10 +18,11 @@ DOHMH New York City Restaurant Inspection Results by NYC OpenData
 
 ## Architecture Diagram
 
-<img src=images/arch.png width="800" height="400">
+<img src=images/arch.png >
 
 ## Data Modeling
 
+<img src=images/dim.png >
 
 List of dimension and fact tables 
 
