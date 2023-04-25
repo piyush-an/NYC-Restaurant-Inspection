@@ -1,0 +1,40 @@
+
+  
+    
+
+  create  table "nyc"."target"."dim_addresses__dbt_tmp"
+  as (
+    
+with
+    distinct_address as (
+        select distinct
+            coalesce(building, 'Unknown') as building,
+            coalesce(street, 'Unknown') as street,
+            coalesce(zipcode, 'Unknown') as zipcode,
+            REPLACE(boro, '0', 'Unknown') as boro,
+            -- NULLIF(latitude, 0) as latitude,
+            -- NULLIF(longitude, 0) as longitude,
+            case when latitude isnull or latitude = 0 then -99999 else latitude end as latitude,
+            case when longitude isnull or longitude = 0 then -99999 else longitude end as longitude,
+            coalesce(community_board, -1.0) as community_board,
+            coalesce(council_district, -1.0) as council_district
+        from "nyc"."target"."load_stg_data"
+    )
+
+select
+    
+    
+md5(cast(coalesce(cast(building as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(street as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(boro as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as address_sk,
+    building,
+    street,
+    zipcode,
+    boro,
+    latitude,
+    longitude,
+    community_board,
+    council_district
+
+from distinct_address
+order by 5,3,2
+  );
+  
