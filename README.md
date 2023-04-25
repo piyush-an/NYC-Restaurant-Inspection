@@ -1,5 +1,6 @@
-# NYC Food Inspection
+[![dbt docs](https://github.com/piyush-an/NYC-Restaurant-Inspection/actions/workflows/static.yml/badge.svg)](https://github.com/piyush-an/NYC-Restaurant-Inspection/actions/workflows/static.yml)
 
+# NYC Food Inspection
 
 ## Problem Statement
 Explore NYC Food Inspections result over the period of 10 years to derive insights related to following
@@ -40,7 +41,7 @@ List of dimension and fact tables
 
 # Data Loading
 
-dbt workflow to load data into dim and fact tables
+dbt workflow to load data into dim and fact tables, [dbt docs](https://piyush-an.github.io/NYC-Restaurant-Inspection)
 
 <img src=images/dbt-dag.png width="90%" height="50%">
 
@@ -60,7 +61,64 @@ There is no publicly accessible instance running, follow one of the two approach
 
 
 ## Inference
+For no filter based on the date, summing up the conclusion
+* A total of 64k inspection carried out
+* Average score inspection were 20
+* 4k places have never been inspected
+* 208k violation are recorded
+* Manhattan has most number of places, 24k
+* 2% of the inspections have passed result
+* 8k places have been closed down due to sever violations
+* year 2022 had the most inspection of about 26k
+* January is the month when most inspection happen
+* Dunkin is the most inspected as well as most violated place
+* A major of the place are based on American cuisine followed by Chinese, Coffee and Pizza
 
 
 ## Source Code Reference
 
+```bash
+.
+├── Makefile
+├── airflow
+│   └── dags
+│       └── load_all_data.py
+├── dbt_nyc
+│   ├── dbt_project.yml
+│   ├── models
+│   │   ├── core
+│   │   │   ├── dim_addresses.sql
+│   │   │   ├── dim_borough.sql
+│   │   │   ├── dim_critical_flag.sql
+│   │   │   ├── dim_cuisine.sql
+│   │   │   ├── dim_food_places.sql
+│   │   │   ├── dim_inspection_actions.sql
+│   │   │   ├── dim_inspection_grades.sql
+│   │   │   ├── dim_inspection_type.sql
+│   │   │   ├── dim_violation_codes.sql
+│   │   │   ├── fact_food_inspections.sql
+│   │   │   ├── fact_foodinspection_violations.sql
+│   │   │   └── schema.yml
+│   │   └── staging
+│   │       ├── load_stg_data.sql
+│   │       └── schema.yml
+│   ├── packages.yml
+│   └── profiles.yml
+├── docker-compose.yaml
+├── great_expectations
+│   ├── checkpoints
+│   │   └── nyc_food_inspection_v05.yml
+│   ├── expectations
+│   │   └── nyc_food_inspection_suite_v2.json
+│   └── great_expectations.yml
+├── requirements.txt
+├── terraform
+│   ├── install.sh
+│   ├── main.tf
+│   ├── output.tf
+│   ├── terraform.tfvars
+│   └── variables.tf
+└── user_data
+    ├── init.sql
+    └── metabase-2023-04-25.sql
+```
