@@ -1,10 +1,34 @@
-Welcome to your new dbt project!
+# Data Loading using dbt core
 
-### Using the starter project
+## Starter Code
 
-Try running the following commands:
-- dbt run
-- dbt test
+1. Create a python virtual environment
+    ```bash
+    python -m venv .venv
+    ```
+
+2. Activate the virtual environment
+    ```bash
+    source .venv/bin/activate
+    ``` 
+
+3. Install the dependency
+    ```bash
+    pip install -r requirements.txt
+    ``` 
+
+4. Export the current working directory as the env variable for dbt
+    ```bash
+    export DBT_PROFILES_DIR=`pwd`/
+    export PROJECT_DIR=`pwd`/
+    ``` 
+
+5. Install dbt dependency
+    ```bash
+    dbt deps
+    ``` 
+
+6. 
 
 
 ### Resources:

@@ -1,6 +1,46 @@
 version: 2
 
 models:
+  - name: dim_addresses
+    description: >
+      List of unique addresses based on building, street and boro
+
+  - name: dim_critical_flag
+    description: >
+      List of unique critical flags
+
+  - name: dim_food_places
+    description: >
+      List of unique based on buisness_id and buisness_name
+
+  - name: dim_inspection_grades
+    description: >
+      List of unique grades reported
+
+  - name: dim_violation_codes
+    description: >
+      List of unique violation code based on violation_code and violation_description
+
+  - name: dim_borough
+    description: >
+      List of unique borough 
+
   - name: dim_cuisine
     description: >
-      List of unique based on cuisine
+      List of unique cuisine based on cuisine_description
+
+  - name: dim_inspection_actions
+    description: >
+      List of unique action taken based on action
+
+  - name: dim_inspection_type
+    description: >
+      List of unique inspection type
+
+  - name: fact_food_inspections
+    description: >
+      List of inspections conducted
+
+  - name: fact_foodinspection_violations
+    description: >
+      List of violation recorded for food inspection

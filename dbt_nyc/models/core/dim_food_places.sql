@@ -1,4 +1,9 @@
-{{ config(materialized="table") }}
+{{ 
+    config(
+        materialized="table",
+        unique_key='foodplace_sk'
+        ) 
+}}
 
 with
     distinct_food_places as (

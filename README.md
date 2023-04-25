@@ -28,16 +28,21 @@ List of dimension and fact tables
 
 |        **Dimension**       |              **Fact**             |
 |:--------------------------:|:---------------------------------:|
-| dim_nyc_addresses          | fct_nyc_food_inspections          |
-| dim_nyc_borough            | fct_nyc_foodinspection_violations |
-| dim_nyc_critical_flag      |                                   |
-| dim_nyc_cuisine            |                                   |
-| dim_nyc_food_places        |                                   |
-| dim_nyc_inspection_actions |                                   |
-| dim_nyc_inspection_grades  |                                   |
-| dim_nyc_inspection_type    |                                   |
-| dim_nyc_violation_codes    |                                   |
+| dim_addresses          | fct_food_inspections          |
+| dim_borough            | fct_foodinspection_violations |
+| dim_critical_flag      |                                   |
+| dim_cuisine            |                                   |
+| dim_food_places        |                                   |
+| dim_inspection_actions |                                   |
+| dim_inspection_grades  |                                   |
+| dim_inspection_type    |                                   |
+| dim_violation_codes    |                                   |
 
+# Data Loading
+
+dbt workflow to load data into dim and fact tables
+
+<img src=images/dbt-dag.png width="90%" height="50%">
 
 ## Steps for Recreation
 

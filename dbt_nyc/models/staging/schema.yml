@@ -5,5 +5,122 @@ sources:
     schema: staging
     tables:
       - name: stg_food_inspection
-      # - name: yellow_gcs
-      # - name: fhv vertical-set-375108.food_inspection.nyc
+models:
+  - name: load_stg_data
+    description: >
+      Load the inspected data from staging to target schema 
+    columns:
+      - name: inspection_id
+        description: >-
+          Primary key for this table, generated  as hash value of 
+          "camis", "inspection_date", "violation_code"] columns
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+
+      - name: buisness_id
+        description: >
+          A 10 digit code to  uniquely identify a establishment (restaurant)
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: buisness_name
+        description: >
+          Public business name, may change at discretion of restaurant owner
+
+      - name: boro
+        description: >
+          Borough of establishment (restaurant) location
+
+      - name: building
+        description: >
+          Building number for establishment (restaurant) location
+
+      - name: street
+        description: >
+          Street name for establishment (restaurant) location
+
+      - name: zipcode
+        description: >
+          Zip code of establishment (restaurant) location
+
+      - name: phone
+        description: >
+          Phone number
+
+      - name: cuisine_description
+        description: >
+          Establishment (restaurant) cuisine
+
+      - name: inspection_date
+        description: >
+          Date when inspection was performed
+          Inspection dates of 1/1/1900 mean an establishment has not yet had an inspection
+
+      - name: action
+        description: >
+          Action associated with each establishment (restaurant) inspection
+
+      - name: violation_code
+        description: >
+          Violation code associated with an establishment (restaurant) inspection
+
+      - name: violation_description
+        description: >
+          Violation description associated with an establishment  (restaurant) inspection
+
+      - name: critical_flag
+        description: >
+          Indicator of critical violation
+        tests:
+          - accepted_values:
+              values: ["Critical", "Not Critical", "Not Applicable"]
+              severity: warn
+
+      - name: score
+        description: >
+          Total score for a particular inspection
+
+      - name: grade
+        description: >
+          Grade associated with the inspection
+        tests:
+          - accepted_values:
+              values: ["A", "B", "C", "Z", "P", "N"]
+              severity: warn
+
+      - name: grade_date
+        description: >
+          Date when grade was issued to the establishment (restaurant)
+
+      - name: record_date
+        description: >
+          Date record was added to dataset
+
+      - name: inspection_type
+        description: >
+          A combination of the inspection program and the type of inspection performed
+
+      - name: latitude
+        description: >
+          coordinates of the location
+
+      - name: longitude
+        description: >
+          coordinates of the location
+
+      - name: community_board
+        description: >
+          community board the establishment (restaurant) belongs to 
+
+      - name: council_district
+        description: >
+          council district the establishment (restaurant) belongs to 
+
+      
+      
+
+

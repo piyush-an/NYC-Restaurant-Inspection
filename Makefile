@@ -20,4 +20,7 @@ clean:
 	$(COMPOSE_BASE) down -v
 
 db-init:
-	docker exec -i db /bin/bash -c "PGPASSWORD=root psql --username root metabase" < ./user_data/dump_24-04-2023_03_22_23.sql
+	docker exec -i db /bin/bash -c "PGPASSWORD=root psql --username root metabase" < ./user_data/metabase-2023-04-25.sql
+
+db-extract:
+	docker exec db pg_dump -c -U root -F p -d metabase > ./user_data/metabase-$(date +%Y-%m-%d).sql
