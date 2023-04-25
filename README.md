@@ -18,11 +18,11 @@ DOHMH New York City Restaurant Inspection Results by NYC OpenData
 
 ## Architecture Diagram
 
-<img src=images/arch.png >
+<img src=images/arch.png width="60%" height="30%">
 
 ## Data Modeling
 
-<img src=images/dim.png >
+<img src=images/dim.png width="60%" height="30%">
 
 List of dimension and fact tables 
 
@@ -38,14 +38,14 @@ List of dimension and fact tables
 | dim_nyc_inspection_type    |                                   |
 | dim_nyc_violation_codes    |                                   |
 
-<!-- ![arch](images/data_modeling.jpg) -->
-
 
 ## Steps for Recreation
 
 > Keeping ease of reproducibility at foremost priority I have avoided to choose dbt cloud and keep all application containerized. Incase one does not have enough resources (Min 8 GB of RAM) on local, they can follow the cloud deployment by provisioning a virtual machine on GCP cloud.
 
-1. [Cloud deployment](docs/cloud_deploy.md)
+There is no publicly accessible instance running, follow one of the two approaches.
+
+1. [Cloud deployment](terraform/README.md)
 2. [Local deployment](docs/local_deploy.md)
 
 

@@ -87,7 +87,7 @@
 
     This runs the data pipeline (run time approx 12 mins)
 
-    <img src=../images/dags.PNG width="600" height="100">
+    <img src=../images/dags.PNG width="100%" height="100%">
 
     1. **Data Sourcing** - Read the csv file from the opendata url and loads the data into `raw_stg_food_inspection` table
     

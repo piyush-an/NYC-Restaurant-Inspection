@@ -1,0 +1,6 @@
+project_id = ""
+region = ""
+zone = ""
+name = "nyc-food-inspection"
+ssh_key_filename = "ce"
+machine_type = "e2-standard-4"
