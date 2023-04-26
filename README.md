@@ -68,7 +68,7 @@ For no filter based on the date, summing up the conclusion
 * 208k violation are recorded
 * Manhattan has most number of places, 24k
 * 2% of the inspections have passed result
-* 8k places have been closed down due to sever violations
+* 8k places have been closed down due to severe violations
 * year 2022 had the most inspection of about 26k
 * January is the month when most inspection happen
 * Dunkin is the most inspected as well as most violated place
